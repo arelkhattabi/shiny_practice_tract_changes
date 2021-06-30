@@ -61,7 +61,7 @@ tracts_ca <- tracts %>%
 tracts %>% 
   as.data.frame() %>% 
   select(-geometry) %>% 
-  dbWriteTable(mydb, "data", . , row.names = FALSE, overwrite =T)
+  dbWriteTable(mydb, "testdata", . , row.names = FALSE, overwrite =T)
 
 # dbWriteTable(mydb, "msa", msa , row.names = FALSE, overwrite =T)
 

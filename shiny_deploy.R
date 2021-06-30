@@ -1,7 +1,6 @@
 rm(list=ls(all=TRUE))
 
-library(dplyr)  #order of package loading matters here...
-library(shiny)
+ library(shiny)
 
 library(rsconnect)
 library(DBI)
@@ -17,8 +16,8 @@ con <- dbConnect(RMySQL::MySQL(),
                  dbname = "testdata",
                  host = ,
                  port = ,
-                 user = ,
-                 password = )
+                 user = "arelkhattabi",
+                 password = "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")
 
 #R shiny account information
 rsconnect::setAccountInfo(name='arelkhattabi',
@@ -29,12 +28,11 @@ rsconnect::setAccountInfo(name='arelkhattabi',
 
 
 #prepare data and send to database 
-setwd("/Volumes/Samsung_T5/research/training/shiny/tract_changes_app")
 mydb <- dbConnect(RSQLite::SQLite(), "my-db_indexes.sqlite") #initialize database
 source("tract_changes.R")
 dbListObjects(mydb)
 
-dbSendQuery(mydb ,"CREATE INDEX index_1 ON data(state, MSA)") #index by state, msa
+dbSendQuery(mydb ,"CREATE INDEX index_1 ON testdata(state, MSA)") #index by state, msa
 
 
  
