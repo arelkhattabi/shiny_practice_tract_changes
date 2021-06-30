@@ -1,0 +1,10 @@
+name: tract_changes_app
+title:
+username:
+account: arelkhattabi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3670455
+bundleId:
+url: https://arelkhattabi.shinyapps.io/tract_changes_app/
+when: 1613853952.99452
